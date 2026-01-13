@@ -419,6 +419,61 @@ p{
     gap:40px;
   }
 }
+/* ===== Professional Focus Background Section ===== */
+.focus-bg{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:url("images/focus.jpg") center / cover no-repeat;
+}
+
+/* Dark overlay for readability */
+.focus-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+}
+
+/* White content card */
+.focus-card{
+  position:relative;
+  z-index:1;
+
+  max-width:760px;
+  background:#f8f4eb;
+  padding:64px 56px;
+  border-radius:24px;
+
+  text-align:center;
+
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+}
+
+.focus-card h2{
+  font-size:42px;
+  margin-bottom:24px;
+}
+
+.focus-card p{
+  font-size:18px;
+  color:#4b5563;
+  margin-bottom:18px;
+}
+
+/* Mobile adjustment */
+@media(max-width:900px){
+  .focus-card{
+    padding:40px 28px;
+    margin:0 20px;
+  }
+
+  .focus-card h2{
+    font-size:32px;
+  }
+}
 
 </style>
 </head>
@@ -505,24 +560,31 @@ p{
   </div>
 </section>
 
-<!-- FOCUS -->
-<section id="focus">
-  <div class="container card">
+<!-- PROFESSIONAL FOCUS (BACKGROUND IMAGE STYLE) -->
+<section id="focus" class="focus-bg">
+
+  <!-- Background overlay -->
+  <div class="focus-overlay"></div>
+
+  <!-- White content card -->
+  <div class="focus-card">
     <h2>Professional Focus</h2>
-    <div class="focus-item">
-      <h4>Precision Oncology & Genomics</h4>
-      <p>Translating genomic diagnostics into real-world clinical systems.</p>
-    </div>
-    <div class="focus-item">
-      <h4>AI-Driven Clinical Platforms</h4>
-      <p>Applying artificial intelligence to improve outcomes and efficiency.</p>
-    </div>
-    <div class="focus-item">
-      <h4>Healthcare Strategy</h4>
-      <p>Designing scalable healthcare platforms across Asia and Europe.</p>
-    </div>
+
+    <p>
+      Integrating clinical medicine, genomics, and artificial intelligence
+      to build scalable, evidence-driven healthcare platforms.
+    </p>
+
+    <p>
+      Huang’s work focuses on translating precision oncology research
+      into real-world systems that improve outcomes, efficiency,
+      and accessibility across global healthcare markets.
+    </p>
   </div>
+
 </section>
+
+
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="container">
