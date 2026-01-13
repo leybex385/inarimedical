@@ -333,6 +333,43 @@ p{
     padding:8px 0;
   }
 }
+/* ===== Publications & Research Layout ===== */
+.research-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+
+.research-text ul{
+  margin-top:24px;
+  padding-left:20px;
+}
+
+.research-text li{
+  margin-bottom:12px;
+  font-size:17px;
+  color:var(--muted);
+}
+
+.research-image img{
+  width:100%;
+  height:auto;
+  border-radius:var(--radius);
+  object-fit:cover;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .research-grid{
+    grid-template-columns:1fr;
+  }
+
+  .research-image{
+    margin-top:32px;
+  }
+}
 
 </style>
 </head>
@@ -440,15 +477,29 @@ p{
 </section>
 <!-- PUBLICATIONS -->
 <section id="publications">
-  <div class="container card">
-    <h2>Selected Publications & Research</h2>
-    <ul>
-      <li>Peer-reviewed research in genomics and precision oncology</li>
-      <li>Clinical translational studies integrating biomarkers into care</li>
-      <li>Applied research on AI-assisted clinical decision systems</li>
-    </ul>
+  <div class="container">
+    <div class="card research-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="research-text">
+        <h2>Selected Publications & Research</h2>
+
+        <ul>
+          <li>Peer-reviewed research in genomics and precision oncology</li>
+          <li>Clinical translational studies integrating biomarkers into care</li>
+          <li>Applied research on AI-assisted clinical decision systems</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="research-image">
+        <img src="images/research.jpg" alt="Research and Publications">
+      </div>
+
+    </div>
   </div>
 </section>
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container card">
