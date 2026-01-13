@@ -6,26 +6,20 @@
 
 <title>Huang Shiyan | Physician-Scientist & Healthcare Strategy</title>
 
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Huang Shiyan | Physician-Scientist & Healthcare Strategy" />
-<meta property="og:description" content="Physician-scientist and healthcare executive integrating precision medicine, genomics, and AI into scalable healthcare systems." />
-<meta property="og:image" content="preview.jpg" />
-
-<link rel="icon" type="image/jpeg" href="favicon.jpg">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0f14;
-  --panel:#121821;
-  --text:#ffffff;
-  --muted:#a7b0bd;
-  --line:#1e2633;
-  --max:1200px;
-  --radius:12px;
+  --bg:#f6f7fb;
+  --dark:#0b0f14;
+  --panel:#ffffff;
+  --text:#1a1f2b;
+  --muted:#6b7280;
+  --accent:#e5e7eb;
+  --radius:16px;
+  --max:1100px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,326 +29,190 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.8;
-  font-size:16px;
 }
 
 /* Global */
-a{color:var(--text);text-decoration:none;border-bottom:1px solid transparent}
-a:hover{border-color:var(--muted)}
-img{max-width:100%;border-radius:var(--radius)}
-
 section{
-  padding:120px 24px;
-  border-top:1px solid var(--line);
+  padding:100px 24px;
 }
-.section-inner{
+.container{
   max-width:var(--max);
   margin:auto;
 }
-.section-title{
+h1,h2{
   font-family:'Playfair Display',serif;
-  font-size:38px;
-  margin-bottom:48px;
 }
-
-/* Navigation */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:10;
-  background:rgba(11,15,20,.75);
-  backdrop-filter:blur(10px);
+h2{
+  font-size:36px;
+  margin-bottom:32px;
 }
-.nav-inner{
-  max-width:var(--max);
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.nav-logo{
-  font-weight:500;
-  letter-spacing:.5px;
-}
-.nav-links a{
-  margin-left:28px;
-  font-size:14px;
+p{
+  font-size:17px;
   color:var(--muted);
 }
-.nav-links a:hover{color:var(--text)}
 
 /* Hero */
 .hero{
-  height:100vh;
-  position:relative;
-}
-.hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(11,15,20,.45),
-    rgba(11,15,20,.92)
-  );
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  align-items:center;
-}
-.hero-inner{
-  max-width:var(--max);
-  margin:auto;
-  padding:0 24px;
+  background:var(--dark);
+  color:white;
+  padding:140px 24px;
 }
 .hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:60px;
-  max-width:900px;
+  font-size:56px;
+  max-width:760px;
 }
 .hero p{
-  margin-top:28px;
-  max-width:720px;
+  margin-top:24px;
   font-size:18px;
-  color:var(--muted);
+  max-width:640px;
+  color:#cbd5e1;
+}
+
+/* Card UI */
+.card{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:48px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
 }
 
 /* Grid */
 .grid{
   display:grid;
-  gap:80px;
+  gap:48px;
 }
 .grid-2{
   grid-template-columns:1fr 1fr;
 }
 
 /* About */
-.about p{
-  font-size:18px;
-  color:var(--muted);
-  margin-bottom:26px;
+.about img{
+  width:100%;
+  border-radius:var(--radius);
 }
 
 /* Focus */
 .focus-item{
-  margin-bottom:36px;
+  margin-bottom:28px;
 }
 .focus-item h4{
   font-weight:500;
-  margin-bottom:10px;
-}
-.focus-item p{
-  color:var(--muted);
+  margin-bottom:8px;
+  color:var(--text);
 }
 
 /* Timeline */
 .timeline-item{
-  border-left:2px solid #2a3345;
-  padding-left:32px;
-  margin-bottom:44px;
-}
-.timeline-item h4{
-  font-weight:500;
-  margin-bottom:10px;
-}
-.timeline-item p{
-  color:var(--muted);
+  padding-left:24px;
+  border-left:3px solid #e5e7eb;
+  margin-bottom:32px;
 }
 
 /* Contact */
 .contact{
   text-align:center;
 }
-.contact p{
-  max-width:680px;
-  margin:20px auto 0;
-  color:var(--muted);
-  font-size:18px;
+.contact a{
+  color:var(--text);
+  font-weight:500;
+  border-bottom:1px solid #d1d5db;
+  text-decoration:none;
 }
-
-/* Footer */
-footer{
-  padding:60px 24px;
-  border-top:1px solid var(--line);
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* Animation */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.9s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:none;
+.contact a:hover{
+  opacity:.7;
 }
 
 /* Responsive */
 @media(max-width:900px){
   .grid-2{grid-template-columns:1fr}
-  .hero h1{font-size:42px}
+  .hero h1{font-size:40px}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Huang Shiyan</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#focus">Focus</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Inquiries</a>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Physician-Scientist & Healthcare Executive</h1>
+    <p>
+      Integrating precision medicine, genomics, and artificial intelligence
+      into scalable healthcare platforms across Asia and Europe.
+    </p>
   </div>
-</nav>
+</section>
 
-<header class="hero">
-  <video src="hero.mp4" autoplay muted loop playsinline></video>
-  <div class="hero-content">
-    <div class="hero-inner">
-      <h1>Physician-Scientist &<br>Healthcare Executive</h1>
-      <p>
-        Integrating precision medicine, genomics, and artificial intelligence
-        into scalable healthcare platforms across Asia and Europe.
-      </p>
-    </div>
-  </div>
-</header>
-
-<section id="about" class="about reveal">
-  <div class="section-inner grid grid-2">
+<!-- ABOUT -->
+<section class="about">
+  <div class="container grid grid-2">
     <img src="portrait-main.jpg" alt="Huang Shiyan">
-    <div>
-      <h2 class="section-title">About</h2>
+    <div class="card">
+      <h2>About</h2>
       <p>
         Huang Shiyan is a Singaporean physician-scientist and healthcare
         executive with over 15 years of multinational experience spanning
-        clinical medicine, biomedical research, and healthcare industry
-        strategy.
+        clinical medicine, biomedical research, and healthcare strategy.
       </p>
       <p>
-        Educated within Singapore’s leading medical institutions and the
-        University of Oxford, her work integrates rigorous clinical training
-        with advanced research in genomics and precision oncology.
-      </p>
-      <p>
-        Her professional focus is on translating clinical and scientific
-        innovation into scalable, technology-enabled healthcare systems
-        that improve cancer outcomes while reducing systemic inefficiencies.
+        Educated at the National University of Singapore and the University
+        of Oxford, her work integrates clinical rigor with advanced research
+        in genomics and precision oncology.
       </p>
     </div>
   </div>
 </section>
 
-<section id="focus" class="reveal">
-  <div class="section-inner grid grid-2">
-    <div>
-      <h2 class="section-title">Professional Focus</h2>
-      <div class="focus-item">
-        <h4>Precision Oncology & Genomics</h4>
-        <p>Clinical translation of genomic diagnostics and biomarker-driven therapies.</p>
-      </div>
-      <div class="focus-item">
-        <h4>AI-Integrated Clinical Systems</h4>
-        <p>Deploying AI to enhance decision-making, efficiency, and patient outcomes.</p>
-      </div>
-      <div class="focus-item">
-        <h4>Healthcare Strategy</h4>
-        <p>Designing multinational healthcare platforms across Asia and Europe.</p>
-      </div>
+<!-- FOCUS -->
+<section>
+  <div class="container card">
+    <h2>Professional Focus</h2>
+    <div class="focus-item">
+      <h4>Precision Oncology & Genomics</h4>
+      <p>Translating genomic diagnostics into real-world clinical systems.</p>
     </div>
-    <img src="medical-industry.jpg" alt="Healthcare Strategy">
+    <div class="focus-item">
+      <h4>AI-Driven Clinical Platforms</h4>
+      <p>Applying artificial intelligence to improve outcomes and efficiency.</p>
+    </div>
+    <div class="focus-item">
+      <h4>Healthcare Strategy</h4>
+      <p>Designing scalable healthcare platforms across Asia and Europe.</p>
+    </div>
   </div>
 </section>
 
-<section id="experience" class="reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Professional Experience</h2>
+<!-- EXPERIENCE -->
+<section>
+  <div class="container card">
+    <h2>Professional Experience</h2>
     <div class="timeline-item">
-      <h4>2019 – Present</h4>
+      <strong>Chief Medical & Strategy Officer</strong><br>
+      International Healthcare Technology Group (2019–Present)
       <p>
-        <strong>Chief Medical & Strategy Officer</strong><br>
-        International Healthcare Technology Group — Singapore & London
-      </p>
-      <p>
-        Leading global healthcare strategy, precision oncology platforms,
-        AI-driven clinical systems, and healthcare technology investments
-        exceeding USD 600 million.
+        Leading multinational healthcare strategy, genomics platforms,
+        AI-driven systems, and investments exceeding USD 600 million.
       </p>
     </div>
   </div>
 </section>
 
-<section id="education" class="reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Education</h2>
-    <div class="timeline-item">
-      <h4>National University of Singapore</h4>
-      <p>MBBS · MSc in Clinical & Translational Medicine</p>
-    </div>
-    <div class="timeline-item">
-      <h4>University of Oxford</h4>
-      <p>PhD in Biomedical Sciences — Genomics & Precision Oncology</p>
-    </div>
-    <div class="timeline-item">
-      <h4>London Business School</h4>
-      <p>MBA — Healthcare Strategy, Private Equity & M&A</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact reveal">
-  <div class="section-inner">
-    <h2 class="section-title">Professional Inquiries</h2>
+<!-- CONTACT -->
+<section class="contact">
+  <div class="container card">
+    <h2>Professional Inquiries</h2>
     <p>
-      This platform is intended for academic, clinical, strategic, and
-      healthcare industry collaborations.
+      This platform is intended for academic, clinical, and strategic
+      healthcare collaborations.
     </p>
     <p>
-      For official company information and medical technology offerings,
-      please refer to
-      <a href="https://www.inarimedical.com/" target="_blank" rel="noopener noreferrer">
+      For official company information, please refer to
+      <a href="https://www.inarimedical.com/" target="_blank">
         Inari Medical
       </a>.
     </p>
   </div>
 </section>
-
-<footer>
-  © Huang Shiyan — Physician-Scientist & Healthcare Strategy
-</footer>
-
-<script>
-const targets=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('active');
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:.15});
-targets.forEach(t=>observer.observe(t));
-</script>
 
 </body>
 </html>
