@@ -258,6 +258,72 @@ p{
     display:flex;
   }
 }
+/* ===== Dropdown Menu ===== */
+.nav-dropdown{
+  position:relative;
+}
+
+.dropdown-toggle{
+  cursor:pointer;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:130%;
+  left:0;
+
+  background:rgba(15,15,15,0.95);
+  backdrop-filter:blur(10px);
+  border-radius:12px;
+  padding:16px 0;
+
+  display:flex;
+  flex-direction:column;
+  min-width:220px;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:all .25s ease;
+}
+
+.dropdown-menu a{
+  padding:10px 20px;
+  font-size:14px;
+  color:rgba(255,255,255,.85);
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.dropdown-menu a:hover{
+  background:rgba(255,255,255,.08);
+  color:white;
+}
+
+/* Desktop Hover */
+.nav-dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* Mobile behavior */
+@media(max-width:900px){
+  .dropdown-menu{
+    position:static;
+    background:none;
+    padding:0;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    min-width:auto;
+  }
+
+  .dropdown-menu a{
+    font-size:20px;
+    padding:8px 0;
+  }
+}
 
 </style>
 </head>
@@ -268,7 +334,22 @@ p{
     <div class="nav-logo">Huang Shiyan</div>
 
     <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
+      <div class="nav-dropdown">
+  <a href="#about" class="dropdown-toggle">About ▾</a>
+
+  <div class="dropdown-menu">
+    <a href="#about">Overview</a>
+    <a href="#focus">Professional Focus</a>
+    <a href="#publications">Publications & Research</a>
+    <a href="#projects">Clinical Projects</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#education">Education</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#awards">Awards</a>
+    <a href="#affiliations">Affiliations</a>
+  </div>
+</div>
+
       <a href="#focus">Professional Focus</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
