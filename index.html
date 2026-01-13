@@ -176,6 +176,52 @@ p{
 .nav-links a:hover{
   color:#ffffff;
 }
+/* ===== Hamburger ===== */
+.hamburger{
+  display:none;
+  width:26px;
+  height:18px;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.hamburger span{
+  height:2px;
+  width:100%;
+  background:white;
+  display:block;
+}
+
+/* Mobile Nav */
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.95);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:32px;
+    transform:translateY(-100%);
+    transition:transform .4s ease;
+    z-index:999;
+  }
+
+  .nav-links a{
+    font-size:22px;
+    color:white;
+  }
+
+  .nav-links.active{
+    transform:translateY(0);
+  }
+
+  .hamburger{
+    display:flex;
+  }
+}
 
 </style>
 </head>
@@ -184,15 +230,23 @@ p{
 <nav class="top-nav">
   <div class="nav-inner">
     <div class="nav-logo">Huang Shiyan</div>
-    <div class="nav-links">
+
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#focus">Professional Focus</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -206,11 +260,14 @@ p{
 </section>
 
 <!-- ABOUT -->
-<section class="about">
-  <div class="container grid grid-2">
-    <img src="portrait-main.jpg" alt="Huang Shiyan">
-    <div class="card">
-      <h2>About</h2>
+<section id="about" class="about">
+  <div class="section-inner grid grid-2">
+    
+    <img src="huang.jpg" alt="Huang Shiyan">
+
+    <div>
+      <h2 class="section-title">About</h2>
+
       <p>
         Huang Shiyan is a Singaporean physician-scientist and healthcare
         executive with over 15 years of multinational experience spanning
@@ -275,6 +332,18 @@ p{
     </p>
   </div>
 </section>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+navLinks.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+});
+</script>
 
 </body>
 </html>
