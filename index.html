@@ -474,6 +474,51 @@ p{
     font-size:32px;
   }
 }
+/* ===== Clinical Projects Section ===== */
+.clinical-section{
+  padding:120px 24px;
+  background:#ffffff;
+}
+
+.clinical-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:64px;
+  align-items:center;
+}
+
+/* Image styling */
+.clinical-image img{
+  width:100%;
+  height:auto;
+  border-radius:20px;
+  object-fit:cover;
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Text styling */
+.clinical-text h2{
+  font-size:42px;
+  margin-bottom:24px;
+}
+
+.clinical-text p{
+  font-size:18px;
+  color:#4b5563;
+  margin-bottom:18px;
+  max-width:520px;
+}
+
+/* Mobile layout */
+@media(max-width:900px){
+  .clinical-grid{
+    grid-template-columns:1fr;
+  }
+
+  .clinical-text h2{
+    font-size:32px;
+  }
+}
 
 </style>
 </head>
@@ -610,20 +655,35 @@ p{
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container card">
-    <h2>Clinical Projects & Initiatives</h2>
-    <div class="focus-item">
-      <h4>Precision Oncology Platform Development</h4>
-      <p>Design and deployment of genomics-driven diagnostic platforms.</p>
+<!-- CLINICAL PROJECTS -->
+<section id="projects" class="clinical-section">
+  <div class="container clinical-grid">
+
+    <!-- IMAGE (LEFT) -->
+    <div class="clinical-image">
+      <img src="images/clinical.jpeg" alt="Clinical Projects">
     </div>
-    <div class="focus-item">
-      <h4>AI-Enabled Clinical Workflow Optimization</h4>
-      <p>Integration of artificial intelligence into hospital systems.</p>
+
+    <!-- TEXT (RIGHT) -->
+    <div class="clinical-text">
+      <h2>Clinical Projects & Initiatives</h2>
+
+      <p>
+        Design and leadership of translational clinical programs integrating
+        genomics, biomarkers, and precision diagnostics into real-world care
+        pathways.
+      </p>
+
+      <p>
+        Projects span oncology, complex disease management, and AI-enabled
+        clinical decision systems, with a focus on scalability, regulatory
+        alignment, and patient-centered outcomes.
+      </p>
     </div>
+
   </div>
 </section>
+
 
 <!-- EXPERIENCE -->
 <section id="experience">
