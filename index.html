@@ -370,6 +370,55 @@ p{
     margin-top:32px;
   }
 }
+/* ===== Professional Highlights (Inari-style grid) ===== */
+.highlights-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+}
+
+.highlight-card{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:56px 40px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+}
+
+.highlight-icon{
+  width:80px;
+  height:80px;
+  margin:0 auto 24px;
+  border-radius:50%;
+  background:#f3f4f6;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:36px;
+}
+
+.highlight-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  margin-bottom:16px;
+  color:var(--text);
+}
+
+.highlight-card p{
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .highlights-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+}
 
 </style>
 </head>
@@ -389,9 +438,8 @@ p{
       <a href="#publications">Publications & Research</a>
       <a href="#projects">Clinical Projects</a>
       <a href="#leadership">Leadership</a>
-      <a href="#speaking">Speaking</a>
-      <a href="#awards">Awards</a>
-      <a href="#affiliations">Affiliations</a>
+      <a href="#highlights">Professional Highlights</a>
+
     </div>
   </div>
 
@@ -529,6 +577,7 @@ p{
     </div>
   </div>
 </section>
+  
   <!-- LEADERSHIP -->
 <section id="leadership">
   <div class="container card">
@@ -540,53 +589,55 @@ p{
     </ul>
   </div>
 </section>
+<!-- PROFESSIONAL HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container card">
-    <h2>Education</h2>
+    <div class="highlights-grid">
 
-    <p><strong>National University of Singapore</strong><br>
-    Bachelor of Medicine & Bachelor of Surgery (MBBS)</p>
+      <!-- Education -->
+      <div class="highlight-card">
+        <div class="highlight-icon">🎓</div>
+        <h3>Education</h3>
+        <p>
+          Medical training at the National University of Singapore, doctoral
+          research in Biomedical Sciences at the University of Oxford, and
+          executive business education at London Business School.
+        </p>
+      </div>
 
-    <p><strong>University of Oxford</strong><br>
-    PhD in Biomedical Sciences (Genomics & Precision Oncology)</p>
+      <!-- Speaking -->
+      <div class="highlight-card">
+        <div class="highlight-icon">🎤</div>
+        <h3>Speaking Engagements & Media</h3>
+        <p>
+          Invited speaker at international medical and life sciences
+          conferences, healthcare innovation forums, and academic institutions.
+        </p>
+      </div>
 
-    <p><strong>London Business School</strong><br>
-    Master of Business Administration (MBA)</p>
-  </div>
-</section>
-<!-- SPEAKING -->
-<section id="speaking">
-  <div class="container card">
-    <h2>Speaking Engagements & Media</h2>
-    <ul>
-      <li>Keynote speaker at precision medicine and genomics conferences</li>
-      <li>Panelist at healthcare strategy and AI forums</li>
-      <li>Invited speaker at academic medical institutions</li>
-    </ul>
-  </div>
-</section>
-<!-- AWARDS -->
-<section id="awards">
-  <div class="container card">
-    <h2>Awards & Honors</h2>
-    <ul>
-      <li>Leadership recognition in healthcare innovation</li>
-      <li>Academic excellence awards in biomedical sciences</li>
-      <li>Competitive research and innovation funding awards</li>
-    </ul>
-  </div>
-</section>
-<!-- AFFILIATIONS -->
-<section id="affiliations">
-  <div class="container card">
-    <h2>Professional Affiliations</h2>
-    <ul>
-      <li>Member of international medical and scientific societies</li>
-      <li>Editorial and advisory roles in clinical research publications</li>
-      <li>Healthcare innovation and policy advisory networks</li>
-    </ul>
+      <!-- Awards -->
+      <div class="highlight-card">
+        <div class="highlight-icon">🏅</div>
+        <h3>Awards & Honors</h3>
+        <p>
+          Recipient of academic and professional recognitions for
+          translational research, clinical leadership, and healthcare strategy.
+        </p>
+      </div>
+
+      <!-- Affiliations -->
+      <div class="highlight-card">
+        <div class="highlight-icon">🌐</div>
+        <h3>Professional Affiliations</h3>
+        <p>
+          Active member of international medical, scientific, and healthcare
+          leadership organizations across Asia and Europe.
+        </p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
