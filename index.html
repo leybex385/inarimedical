@@ -63,10 +63,12 @@ p{
 .hero{
   position:relative;
   height:100vh;
-  background:var(--dark);
-  color:white;
   overflow:hidden;
+  color:white;
+  display:flex;
+  align-items:center;
 }
+
 .hero h1{
   font-size:56px;
   max-width:760px;
@@ -77,6 +79,29 @@ p{
   max-width:640px;
   color:#cbd5e1;
 }
+  .hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(6px);
+  transform:scale(1.05); /* prevents blur edges */
+  z-index:-2;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:-1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
 
 /* Card UI */
 .card{
@@ -261,7 +286,16 @@ p{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
+  <!-- Video Background -->
+ <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+    <source src="videobg.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="container hero-content">
     <h1>Physician-Scientist & Healthcare Executive</h1>
     <p>
       Integrating precision medicine, genomics, and artificial intelligence
@@ -269,6 +303,7 @@ p{
     </p>
   </div>
 </section>
+
 
 <!-- ABOUT -->
 <section id="about" class="about">
