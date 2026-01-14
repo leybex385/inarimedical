@@ -117,22 +117,25 @@ p{
   gap:48px;
 }
 .grid-2{
-  grid-template-columns:0.9fr 1.1fr;
+  grid-template-columns:1fr 1fr;
 }
-
 
 /* About */
-/* About image — clean & responsive */
 .about img{
   width:100%;
-  max-width:100%;
   border-radius:var(--radius);
+}
+.about img{
+  width:100%;
+  max-width:460px; /* ← adjust this */
+  margin:0 auto;
   display:block;
 }
-.about .grid{
-  align-items:center;
+.about img{
+  width:100%;
+  max-width:440px;
+  margin-right:auto;
 }
-
 
 /* Focus */
 .focus-item{
@@ -639,27 +642,6 @@ section{
   scroll-margin-top:100px;
 }
 
-.education-bg{
-  padding:120px 24px;
-}
-footer{
-  position:relative;
-  z-index:1;
-}
-/* ===== Layout Reset After Removing Recognition ===== */
-section{
-  position:relative;
-}
-
-.container{
-  position:relative;
-}
-section::after{
-  content:"";
-  display:block;
-  clear:both;
-}
-
 </style>
 </head>
 
@@ -833,6 +815,9 @@ section::after{
 
       </div>
 
+    </div>
+  </div>
+</section>
   
 <section id="education" class="education-bg">
   <div class="container">
