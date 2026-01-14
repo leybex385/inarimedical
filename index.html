@@ -831,6 +831,112 @@ section{
     text-align: center;
   }
 }
+/* =========================
+   CONTACT SECTION (DARK + MAP)
+========================= */
+
+.contact-section {
+  background: #1e1f23;
+  padding: 100px 24px;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+}
+
+/* LEFT */
+.contact-info h2 {
+  color: #8bb4ff;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.info-block {
+  margin-bottom: 24px;
+}
+
+.info-block h4 {
+  color: #8bb4ff;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-block p {
+  color: #e5e7eb;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* MAP */
+.map-box {
+  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+/* RIGHT FORM */
+.contact-form {
+  background: #2a2b30;
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.contact-form label {
+  display: block;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #3a3b40;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #1e5eff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
 </head>
@@ -1235,27 +1341,62 @@ section{
     </p>
   </div>
 </section>
-  <!-- CONTACT INFO STRIP -->
-<section class="contact-strip">
-  <div class="contact-strip-inner">
+ <!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
 
-    <div class="contact-item">
-      <span class="icon">📞</span>
-      <span>+1 213 773 3971</span>
+    <!-- LEFT: INFO -->
+    <div class="contact-info">
+      <h2>Contact</h2>
+
+      <div class="info-block">
+        <h4>Email</h4>
+        <p>huangshiyan22@gmail.com</p>
+      </div>
+
+      <div class="info-block">
+        <h4>Phone</h4>
+        <p>+1 213 773 3971</p>
+      </div>
+
+      <div class="info-block">
+        <h4>Office Address</h4>
+        <p>
+          Corporate Park<br>
+          2132 Michelson Dr<br>
+          Irvine, CA 92612
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=2132%20Michelson%20Dr%20Irvine%20CA%2092612&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
 
-    <div class="contact-item">
-      <span class="icon">📍</span>
-      <span>2132 Michelson Dr, Irvine, CA 92612</span>
-    </div>
+    <!-- RIGHT: FORM -->
+    <div class="contact-form">
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your Name">
 
-    <div class="contact-item">
-      <span class="icon">✉️</span>
-      <span>huangshiyan22@gmail.com</span>
+        <label>Email</label>
+        <input type="email" placeholder="Your Email">
+
+        <label>Message</label>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
     </div>
 
   </div>
 </section>
+
 
 <script>
 const hamburger = document.getElementById('hamburger');
