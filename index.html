@@ -792,6 +792,45 @@ section{
     max-width: 100%;
   }
 }
+/* =========================
+   CONTACT STRIP (AFTER INQUIRIES)
+========================= */
+
+.contact-strip {
+  background: #1a1b1f;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.contact-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  color: #d6d6d6;
+  font-size: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item .icon {
+  color: #8bb4ff;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .contact-strip-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+}
 
 </style>
 </head>
@@ -1196,6 +1235,28 @@ section{
     </p>
   </div>
 </section>
+  <!-- CONTACT INFO STRIP -->
+<section class="contact-strip">
+  <div class="contact-strip-inner">
+
+    <div class="contact-item">
+      <span class="icon">📞</span>
+      <span>+1 213 773 3971</span>
+    </div>
+
+    <div class="contact-item">
+      <span class="icon">📍</span>
+      <span>2132 Michelson Dr, Irvine, CA 92612</span>
+    </div>
+
+    <div class="contact-item">
+      <span class="icon">✉️</span>
+      <span>huangshiyan22@gmail.com</span>
+    </div>
+
+  </div>
+</section>
+
 <script>
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
