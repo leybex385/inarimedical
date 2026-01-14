@@ -638,24 +638,26 @@ section.visible{
 section{
   scroll-margin-top:100px;
 }
-.recognition-slider{
-  position:relative;
-  min-height:520px;   /* THIS IS THE KEY LINE */
-}
-.recognition-slide{
-  position:absolute;
-  inset:0;
-}
 
-.recognition-slide.active{
-  position:relative;   /* 👈 THIS RESTORES HEIGHT */
-}
 .education-bg{
   padding:120px 24px;
 }
 footer{
   position:relative;
   z-index:1;
+}
+/* ===== Layout Reset After Removing Recognition ===== */
+section{
+  position:relative;
+}
+
+.container{
+  position:relative;
+}
+section::after{
+  content:"";
+  display:block;
+  clear:both;
 }
 
 </style>
@@ -830,68 +832,6 @@ footer{
         </div>
 
       </div>
-<section class="recognition">
-  <div class="container">
-
-    <h2 class="section-title">Recognition</h2>
-
-    <div class="recognition-slider">
-
-      <!-- Slide 1 -->
-      <div class="recognition-slide active">
-        <div class="recognition-media">
-          <img src="meeting.jpg" alt="Executive Roundtable">
-        </div>
-        <div class="recognition-content">
-          <h3>Global Healthcare Strategy Roundtable</h3>
-          <p>
-            Invited participant at a closed-door executive roundtable on
-            cross-border healthcare innovation, data governance, and
-            translational research partnerships in Asia and Europe.
-          </p>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="recognition-slide">
-        <div class="recognition-media">
-          <video src="recognition.mp4" muted playsinline></video>
-        </div>
-        <div class="recognition-content">
-          <h3>International Recognition Forum</h3>
-          <p>
-            Featured speaker at an international forum recognizing leadership
-            in precision medicine, healthcare systems design, and
-            translational science impact.
-          </p>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="recognition-slide">
-        <div class="recognition-media">
-          <img src="philanthropy.jpg" alt="Healthcare Philanthropy">
-        </div>
-        <div class="recognition-content">
-          <h3>Healthcare Philanthropy Initiative</h3>
-          <p>
-            Contributor to regional healthcare philanthropy initiatives
-            supporting access to cancer diagnostics, clinician training,
-            and community health programs.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Controls -->
-    <div class="recognition-controls">
-      <button class="prev">‹</button>
-      <button class="next">›</button>
-    </div>
-
-  </div>
-</section>
 
   
 <section id="education" class="education-bg">
@@ -1100,36 +1040,6 @@ navLinks.addEventListener('click', () => {
   });
 </script>
 
-<script>
-  const slides = document.querySelectorAll('.recognition-slide');
-  const nextBtn = document.querySelector('.recognition-controls .next');
-  const prevBtn = document.querySelector('.recognition-controls .prev');
-
-  let current = 0;
-
-  function showSlide(index){
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-
-      const video = slide.querySelector('video');
-      if(video){
-        i === index ? video.play() : video.pause();
-      }
-    });
-  }
-
-  nextBtn.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  });
-
-  showSlide(current);
-</script>
 
 </body>
 </html>
