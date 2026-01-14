@@ -540,6 +540,42 @@ p{
   font-size:18px;
   line-height:1.9;
 }
+/* ===== Leadership Presentation Section ===== */
+.leadership-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.leadership-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.leadership-text h2{
+  font-size:40px;
+  margin-bottom:24px;
+}
+
+.leadership-text p{
+  font-size:18px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .leadership-layout{
+    grid-template-columns:1fr;
+  }
+
+  .leadership-image{
+    order:-1;
+  }
+}
 
 </style>
 </head>
@@ -772,15 +808,36 @@ p{
   
   <!-- LEADERSHIP -->
 <section id="leadership">
-  <div class="container card">
-    <h2>Leadership & Board Roles</h2>
-    <ul>
-      <li>Chief Medical & Strategy Officer — International Healthcare Technology Group</li>
-      <li>Advisor to healthcare technology startups</li>
-      <li>Board-level involvement in healthcare investment platforms</li>
-    </ul>
+  <div class="container">
+    <div class="card leadership-layout">
+
+      <!-- LEFT IMAGE -->
+      <div class="leadership-image">
+        <img src="images/leader.jpg" alt="Leadership & Board Roles">
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="leadership-text">
+        <h2>Leadership & Board Roles</h2>
+
+        <p>
+          Executive leadership at the intersection of medicine, research,
+          and healthcare infrastructure development, with board-level
+          responsibilities spanning multinational health technology
+          organizations.
+        </p>
+
+        <p>
+          Experience includes strategic governance, clinical oversight,
+          investment evaluation, and long-term platform scaling across
+          diverse healthcare systems.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
+
 <!-- PROFESSIONAL HIGHLIGHTS -->
 <section id="highlights">
   <div class="container">
