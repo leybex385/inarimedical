@@ -638,6 +638,25 @@ section.visible{
 section{
   scroll-margin-top:100px;
 }
+.recognition-slider{
+  position:relative;
+  min-height:520px;   /* THIS IS THE KEY LINE */
+}
+.recognition-slide{
+  position:absolute;
+  inset:0;
+}
+
+.recognition-slide.active{
+  position:relative;   /* 👈 THIS RESTORES HEIGHT */
+}
+.education-bg{
+  padding:120px 24px;
+}
+footer{
+  position:relative;
+  z-index:1;
+}
 
 </style>
 </head>
