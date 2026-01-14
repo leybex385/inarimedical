@@ -669,6 +669,90 @@ section{
     grid-template-columns:1fr;
   }
 }
+.recognition{
+  padding:6rem 0;
+}
+
+.recognition-slider{
+  position:relative;
+  overflow:hidden;
+}
+
+.recognition-slide{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:4rem;
+  align-items:center;
+  opacity:0;
+  transform:translateX(40px);
+  transition:opacity .6s ease, transform .6s ease;
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+}
+
+.recognition-slide.active{
+  opacity:1;
+  transform:translateX(0);
+  position:relative;
+}
+
+.recognition-media img,
+.recognition-media video{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  border-radius:var(--radius);
+}
+
+.recognition-content{
+  max-width:520px;
+}
+
+.recognition-content h3{
+  font-size:1.8rem;
+  margin-bottom:1rem;
+}
+
+.recognition-content p{
+  font-size:1.05rem;
+  line-height:1.8;
+}
+
+/* Controls */
+.recognition-controls{
+  display:flex;
+  justify-content:flex-end;
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.recognition-controls button{
+  background:#111;
+  color:#fff;
+  border:none;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:1.4rem;
+  cursor:pointer;
+}
+@media (max-width:768px){
+  .recognition-slide{
+    grid-template-columns:1fr;
+    gap:2rem;
+  }
+
+  .recognition-media img,
+  .recognition-media video{
+    height:280px;
+  }
+
+  .recognition-controls{
+    justify-content:center;
+  }
+}
 
 </style>
 </head>
@@ -842,72 +926,69 @@ section{
         </div>
 
       </div>
-<section class="section recognition fade-in" id="recognition">
+<section class="recognition">
   <div class="container">
 
     <h2 class="section-title">Recognition</h2>
 
-    <!-- Recognition Item 1 -->
-    <div class="recognition-item fade-in">
-      <div class="recognition-media">
-        <img src="images/meeting.jpg" alt="Industry leadership meeting">
+    <div class="recognition-slider">
+
+      <!-- Slide 1 -->
+      <div class="recognition-slide active">
+        <div class="recognition-media">
+          <img src="meeting.jpg" alt="Executive Roundtable">
+        </div>
+        <div class="recognition-content">
+          <h3>Global Healthcare Strategy Roundtable</h3>
+          <p>
+            Invited participant at a closed-door executive roundtable on
+            cross-border healthcare innovation, data governance, and
+            translational research partnerships in Asia and Europe.
+          </p>
+        </div>
       </div>
-      <div class="recognition-content">
-        <h3>Industry & Leadership Engagement</h3>
-        <p>
-          Invited participation in executive-level healthcare and life sciences
-          leadership discussions, focusing on innovation strategy, translational
-          research, and scalable healthcare delivery models.
-        </p>
-        <p>
-          Contributions centered on bridging clinical practice with business
-          execution and emerging biomedical technologies.
-        </p>
+
+      <!-- Slide 2 -->
+      <div class="recognition-slide">
+        <div class="recognition-media">
+          <video src="recognition.mp4" muted playsinline></video>
+        </div>
+        <div class="recognition-content">
+          <h3>International Recognition Forum</h3>
+          <p>
+            Featured speaker at an international forum recognizing leadership
+            in precision medicine, healthcare systems design, and
+            translational science impact.
+          </p>
+        </div>
       </div>
+
+      <!-- Slide 3 -->
+      <div class="recognition-slide">
+        <div class="recognition-media">
+          <img src="philanthropy.jpg" alt="Healthcare Philanthropy">
+        </div>
+        <div class="recognition-content">
+          <h3>Healthcare Philanthropy Initiative</h3>
+          <p>
+            Contributor to regional healthcare philanthropy initiatives
+            supporting access to cancer diagnostics, clinician training,
+            and community health programs.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Recognition Item 2 -->
-    <div class="recognition-item fade-in">
-      <div class="recognition-media">
-        <img src="images/philanthropy.jpg" alt="Philanthropy and community impact">
-      </div>
-      <div class="recognition-content">
-        <h3>Philanthropy & Social Impact</h3>
-        <p>
-          Active involvement in philanthropic initiatives supporting healthcare
-          access, medical education, and community-based health programs.
-        </p>
-        <p>
-          Focus on sustainable impact through partnerships with non-profit
-          organizations and academic institutions.
-        </p>
-      </div>
-    </div>
-
-    <!-- Recognition Video -->
-    <div class="recognition-item fade-in">
-      <div class="recognition-media">
-        <video controls>
-          <source src="videos/recognition.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div class="recognition-content">
-        <h3>Professional Recognition Highlights</h3>
-        <p>
-          Highlights from professional engagements, collaborative forums,
-          and knowledge-sharing sessions across healthcare, research,
-          and executive leadership settings.
-        </p>
-      </div>
+    <!-- Controls -->
+    <div class="recognition-controls">
+      <button class="prev">‹</button>
+      <button class="next">›</button>
     </div>
 
   </div>
 </section>
 
-    </div>
-  </div>
-</section>
   
 <section id="education" class="education-bg">
   <div class="container">
@@ -1115,6 +1196,36 @@ navLinks.addEventListener('click', () => {
   });
 </script>
 
+<script>
+  const slides = document.querySelectorAll('.recognition-slide');
+  const nextBtn = document.querySelector('.recognition-controls .next');
+  const prevBtn = document.querySelector('.recognition-controls .prev');
+
+  let current = 0;
+
+  function showSlide(index){
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+
+      const video = slide.querySelector('video');
+      if(video){
+        i === index ? video.play() : video.pause();
+      }
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+</script>
 
 </body>
 </html>
