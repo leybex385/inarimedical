@@ -732,6 +732,66 @@ section{
     grid-template-columns:1fr;
   }
 }
+/* =========================
+   RECOGNITION SECTION
+========================= */
+
+#recognition {
+  padding: 120px 0;
+}
+
+.recognition-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#recognition .section-title {
+  margin-bottom: 80px;
+}
+
+/* ROW LAYOUT */
+.recognition-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+/* TEXT */
+.recognition-text h3 {
+  margin-bottom: 16px;
+}
+
+.recognition-text p {
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* MEDIA */
+.recognition-media img,
+.recognition-media video {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  display: block;
+}
+
+/* VIDEO FIX */
+.recognition-media video {
+  background: #000;
+}
+@media (max-width: 900px) {
+  .recognition-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .recognition-media img,
+  .recognition-media video {
+    max-width: 100%;
+  }
+}
 
 </style>
 </head>
@@ -1015,56 +1075,59 @@ section{
 </section>
 <!-- RECOGNITION -->
 <section id="recognition">
-  <div class="container">
+  <div class="container recognition-container">
 
-    <div class="recognition-layout">
+    <h2 class="section-title">Recognition</h2>
 
-      <!-- LEFT: TEXT -->
-      <div class="recognition-text card">
-
-        <h2>Recognition</h2>
-
-        <div class="recognition-item">
-          <h3>Strategic Healthcare Leadership Engagements</h3>
-          <p>
-            Recognized through participation in closed-door healthcare leadership
-            forums and executive discussions focused on precision medicine,
-            healthcare system design, and cross-border clinical integration.
-          </p>
-        </div>
-
-        <div class="recognition-item">
-          <h3>International Collaboration & Advisory Dialogues</h3>
-          <p>
-            Invited contributor to multinational healthcare collaboration meetings
-            involving academic institutions, healthcare technology groups, and
-            policy stakeholders addressing governance, data interoperability,
-            and scalable clinical innovation.
-          </p>
-        </div>
-
-        <div class="recognition-item">
-          <h3>Philanthropy & Social Impact Initiatives</h3>
-          <p>
-            Engagement in healthcare philanthropy initiatives supporting early
-            cancer detection, health education, and sustainable capacity building
-            in underserved populations across Asia and Europe.
-          </p>
-        </div>
-
+    <!-- ROW 1 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Strategic Healthcare Leadership Engagements</h3>
+        <p>
+          Recognized through participation in closed-door healthcare leadership
+          forums and executive discussions focused on precision medicine,
+          healthcare system design, and cross-border clinical integration.
+        </p>
       </div>
 
-      <!-- RIGHT: MEDIA -->
       <div class="recognition-media">
-
         <img src="images/meeting.jpg" alt="Healthcare Leadership Meeting">
+      </div>
+    </div>
 
-        <img src="images/philanthropy.jpg" alt="Healthcare Philanthropy">
-
-        <video src="videos/recognition.mp4" controls muted></video>
-
+    <!-- ROW 2 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>International Collaboration & Advisory Dialogues</h3>
+        <p>
+          Invited contributor to multinational healthcare collaboration meetings
+          involving academic institutions, healthcare technology groups, and
+          policy stakeholders addressing governance, data interoperability,
+          and scalable clinical innovation.
+        </p>
       </div>
 
+      <div class="recognition-media">
+        <img src="images/philanthropy.jpg" alt="Healthcare Philanthropy">
+      </div>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="recognition-row">
+      <div class="recognition-text">
+        <h3>Philanthropy & Social Impact Initiatives</h3>
+        <p>
+          Engagement in healthcare philanthropy initiatives supporting early
+          cancer detection, health education, and sustainable capacity building
+          in underserved populations across Asia and Europe.
+        </p>
+      </div>
+
+      <div class="recognition-media">
+        <video controls muted playsinline>
+          <source src="recognition.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
   </div>
